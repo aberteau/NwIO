@@ -12,6 +12,7 @@
 #define OUTPUT_HPP
 
 #include <Arduino.h>
+#include <Adafruit_MCP23X17.h>
 
 struct OutputConfig
 {
@@ -21,12 +22,13 @@ struct OutputConfig
 
 class Output {
 public:
-  void init(OutputConfig config);
+  void init(Adafruit_MCP23X17 &mcp, OutputConfig config);
   void set(bool state);
   void on(unsigned short duration);
   void loop();
 
 private:;
+  Adafruit_MCP23X17 *_mcp;
   OutputConfig _config;
   bool _invertLogic;
   unsigned short _onDuration;

@@ -2,14 +2,21 @@
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-## About This Project
 NwIO = Networked Inputs/Ouputs
 
-This repository contains programs that allow digital I/O interactions through IP network.
+This repository contains programs that allow digital I/O interactions through IP network. (HTTP, MQTT)
 
 <!-- PROJECTS -->
 ## Projects
+| Project                                                  | Number of IO | Network | Communication |
+|----------------------------------------------------------|--------------|-------------------|---------------|
+| [NwIO-WiFi-HTTP](NwIO-WiFi-HTTP) | 18           | WiFi              | HTTP          |
 
+<!-- ROADMAP -->
+## Roadmap
+
+- [ ] Use of 32 I/O (using 2 x MCP23017)
+- [ ] Adding MQTT communication
 
 <!-- LICENSE -->
 ## License
@@ -22,6 +29,11 @@ See [LICENSE](LICENSE) for more information.
 
 ## Authors
 * **Amael BERTEAU**
+
+<!-- CONTACT -->
+## Contact
+- [Project page (Personal Website)](https://amaelberteau.com/projects/nwio) (French)
+- [Facebook Page "Le Lab d'Amael"](https://www.facebook.com/amael.lab) (French)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555

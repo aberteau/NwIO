@@ -9,8 +9,8 @@
  */
 
 #include <Arduino.h>
-#include <Input.hpp>
-#include <Output.hpp>
+#include "Input.hpp"
+#include "Output.hpp"
 
 // WiFi
 const char* WIFI_SSID = "REPLACE_WITH_YOUR_SSID";

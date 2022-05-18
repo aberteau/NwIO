@@ -28,11 +28,9 @@ For more information :
 Open this project in PlatformIO
 
 ### If you use Arduino IDE
-- Copy/Paste content of file [main.cpp](src/main.cpp) to your ino file
+- Copy/Paste content of file [main.cpp](src/main.cpp) to your ino file (You can remove the following line ``#include <Arduino.h>``)
 - Copy other files in folder `src` to the same folder as ino file
 - Install libraries listed in [Build With](#built-with) section
-- Edit include directives. remove the following line
-``#include <Arduino.h>``
 - Enable the `Path variable` support for ESPAsyncWebServer
 
 #### How to enable the `Path variable` support for ESPAsyncWebServer ?

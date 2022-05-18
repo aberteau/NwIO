@@ -28,34 +28,9 @@ All settings are defined in [Configuration.hpp](src/Configuration.hpp)
 | deviceId   | Device identifier |
 
 ## Inputs & Outputs
-By default, this program handles 8 inputs and 10 outputs (See [io-mappings](io-mappings.md)) but you can easily change pins usage by modifying ``inputConfigs`` and ``outputConfigs``.
+This program handles :
+- 16 inputs (ESP32 GPIO)
+- 16 outputs (Waveshare MCP23017 GPIO)
 
-For example, to use 2 inputs and 16 outputs, use the following mapping :
-```
-InputConfig inputConfigs[] =
-{
-  { 32, false, debounceDelay },
-  { 33, false, debounceDelay }
-};
-
-OutputConfig outputConfigs[] =
-{
-  { 23, false },
-  { 22, false },
-  { 21, false },
-  { 19, false },
-  { 18, false },
-  { 5, false },
-  { 17, false },
-  { 16, false },
-  { 4, false },
-  { 15, false }
-  { 25, false },
-  { 26, false },
-  { 27, false },
-  { 14, false },
-  { 12, false },
-  { 13, false }
-};
-```
-
+You can change input pins assignation by modifying ``inputConfigs``
+(See [io-mappings](io-mappings.md))

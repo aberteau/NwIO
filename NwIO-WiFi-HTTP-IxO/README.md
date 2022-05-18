@@ -1,19 +1,23 @@
-# NwIO-WiFi-HTTP
+# NwIO-WiFi-HTTP-IxO
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
 ## About The Project
-This program allows to use an ESP32 to control 18 Inputs/Outputs over HTTP using WiFi Connection.
+This program allows to use an ESP32 to control 32 Inputs/Outputs over HTTP using WiFi Connection.
+
+- 16 inputs (ESP32 GPIO)
+- 16 outputs (Waveshare MCP23017 GPIO)
 
 ### Features
 - send the state of an input to an HTTP server
 - set the state of an output by HTTP calls
 
-![Overview](NwIO-WiFi-HTTP%20Overview.png)
+![Overview](NwIO-WiFi-HTTP-IxO%20Overview.png)
 
 <!-- GETTING STARTED -->
 ## Getting Started
 ### Hardware
 - ESP32 NodeMCU
+- Waveshare MCP23017 IO Expansion Board (connected on ESP32 using I2C)
 
 [About Hardware](../doc/About-Hardware.md)
 
@@ -30,8 +34,6 @@ The procedure is detailed in [Using Arduino IDE](../doc/Using-ArduinoIDE.md).
 Before uploading program to your ESP32, you must configure settings (IP Address, ...).
 
 [Configuration](configuration.md)
-
-By default, this program handles 8 inputs and 10 outputs but you can easily modify pins usage (For example, 2 inputs and 16 outputs) in configuration.
 
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -110,6 +112,7 @@ See [LICENSE](../LICENSE) for more information.
 ## Built With
 - me-no-dev/AsyncTCP [Repository](https://github.com/me-no-dev/AsyncTCP)
 - me-no-dev/ESPAsyncWebServer [Repository](https://github.com/me-no-dev/ESPAsyncWebServer)
+- adafruit/Adafruit-MCP23017-Arduino-Library [Repository](https://github.com/adafruit/Adafruit-MCP23017-Arduino-Library)
 
 ## Authors
 * **Amael BERTEAU**

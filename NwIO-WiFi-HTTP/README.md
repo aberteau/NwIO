@@ -57,23 +57,46 @@ By default, this program handles 8 inputs and 10 outputs but you can easily modi
 <!-- USAGE EXAMPLES -->
 ## Usage
 ### Send input state to HTTP Server
-Each change of state triggers an HTTP request to following URL ``http://{server}:{serverPort}/input/{id}/{state}``
 
-| Parameter | Description | Values                            |
-|-----------|-------------|-----------------------------------|
-| id        | Input id    | See [io-mappings](io-mappings.md) |
-| state     | Input state | 0 or 1                            |
+Each change of state triggers an HTTP request to following URL (depending value of `deviceId`)
+
+| When `deviceId` is | HTTP request is sent to                                      |
+|--------------------|--------------------------------------------------------------|
+| Empty String ("")  | `http://{server}:{serverPort}/input/{id}/{state}`            |
+| Non-empty String   | `http://{server}:{serverPort}/input/{deviceId}/{id}/{state}` |
+
+| Parameter | Description       | Values                                        |
+|-----------|-------------------|-----------------------------------------------|
+| deviceId  | Device identifier | Value of `deviceId` setted in Configuration.hpp |
+| id        | Input id          | See [io-mappings](io-mappings.md)             |
+| state     | Input state       | 0 or 1                                        |
 
 #### Examples
+##### Example A
 Given the following configuration :
 ```
 IPAddress server(192, 168, 0, 1);
 int serverPort = 1234;
+...
+String deviceId = "";
 ```
 | When                 | HTTP request is sent on                         |
 |----------------------|---------------------------------------|
 | Input 0 changes to 0 | ``http://192.168.0.1:1234/input/0/0``   |
 | Input 0 changes to 1 | ``http://192.168.0.1:1234/input/0/1``    |
+
+##### Example B
+Given the following configuration :
+```
+IPAddress server(192, 168, 0, 1);
+int serverPort = 1234;
+...
+String deviceId = "deviceA";
+```
+| When                 | HTTP request is sent on                       |
+|----------------------|-----------------------------------------------|
+| Input 0 changes to 0 | ``http://192.168.0.1:1234/input/deviceA/0/0`` |
+| Input 0 changes to 1 | ``http://192.168.0.1:1234/input/deviceA/0/1`` |
 
 ### Set output state with HTTP calls
 To set output state, call following URL ``http://{ip}/output/{id}/{state}/{duration}``
@@ -100,7 +123,6 @@ IPAddress ip(192, 168, 0, 11);
 ## Roadmap
 
 - [ ] Use of 32 I/O (using 2 x MCP23017)
-- [ ] Adding identifier to identify emitter of HTTP Request (``http://{server}:{serverPort}/{deviceId}/input/{id}/{state}``)
 
 <!-- LICENSE -->
 ## License

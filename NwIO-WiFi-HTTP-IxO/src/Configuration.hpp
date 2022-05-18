@@ -46,7 +46,15 @@ InputConfig inputConfigs[] =
   { 27, false, debounceDelay },
   { 14, false, debounceDelay },
   { 12, false, debounceDelay },
-  { 13, false, debounceDelay }
+  { 13, false, debounceDelay },
+  { 23, false, debounceDelay },
+  { 19, false, debounceDelay },
+  { 18, false, debounceDelay },
+  { 5, false, debounceDelay },
+  { 17, false, debounceDelay },
+  { 16, false, debounceDelay },
+  { 4, false, debounceDelay },
+  { 15, false, debounceDelay }
 };
 
 // Outputs
@@ -57,14 +65,20 @@ InputConfig inputConfigs[] =
 */
 OutputConfig outputConfigs[] =
 {
-  { 23, false },
-  { 22, false },
-  { 21, false },
-  { 19, false },
-  { 18, false },
-  { 5, false },
-  { 17, false },
-  { 16, false },
+  { 0, false },
+  { 1, false },
+  { 2, false },
+  { 3, false },
   { 4, false },
+  { 5, false },
+  { 6, false },
+  { 7, false },
+  { 8, false },
+  { 9, false },
+  { 10, false },
+  { 11, false },
+  { 12, false },
+  { 13, false },
+  { 14, false },
   { 15, false }
 };

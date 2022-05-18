@@ -15,10 +15,13 @@
 #include "Output.hpp"
 #include "Input.hpp"
 #include "InputStateHttpSender.hpp"
+#include <Adafruit_MCP23X17.h>
 #include "Configuration.hpp"
 
 AsyncWebServer webServer(80);
 WiFiClient client;
+
+Adafruit_MCP23X17 outputsMcp;
 
 const uint8_t inputCount = sizeof(inputConfigs) / sizeof(inputConfigs[0]);
 Input inputs[inputCount];
@@ -66,10 +69,14 @@ void setupInputs() {
 }
 
 void setupOutputs() {
+  if (!outputsMcp.begin_I2C(0x27)) {
+    Serial.println("Error.");
+    while (1);
+  }
 
   for (uint8_t i = 0; i < outputCount; i++) {
     OutputConfig config = outputConfigs[i];
-    outputs[i].init(config);
+    outputs[i].init(outputsMcp, config);
   }
 }
 

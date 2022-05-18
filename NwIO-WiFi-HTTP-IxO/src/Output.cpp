@@ -11,10 +11,11 @@
 #include "Output.hpp"
 #include <Arduino.h>
 
-void Output::init(OutputConfig config) {
-   _config = config;
-   pinMode(_config.pin, OUTPUT);
-   set(false);
+void Output::init(Adafruit_MCP23X17 &mcp, OutputConfig config) {
+  _mcp = &mcp;
+  _config = config;
+  _mcp->pinMode(_config.pin, OUTPUT);
+  set(false);
 }
 
 uint8_t Output::getVal(bool state) {
@@ -24,7 +25,7 @@ uint8_t Output::getVal(bool state) {
 
 void Output::internalSet(bool state) {
   uint8_t val = getVal(state);
-  digitalWrite(_config.pin, val);
+  _mcp->digitalWrite(_config.pin, val);
 }
 
 void Output::set(bool state) {

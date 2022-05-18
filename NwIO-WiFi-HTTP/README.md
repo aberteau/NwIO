@@ -13,39 +13,18 @@ This program allows to use an ESP32 to control 18 Inputs/Outputs over HTTP using
 <!-- GETTING STARTED -->
 ## Getting Started
 ### Hardware
-ESP32 NodeMCU
+- ESP32 NodeMCU
 
-I used "ESP32 NodeMCU Module WLAN WiFi Development Board with CP2102"
-
-![ESP32 NodeMCU](Esp32DevkitC.png)
-
-For more information :
-- [AZ Delivery](https://www.az-delivery.de/en/products/esp32-developmentboard)
-- [Amazon.fr](https://www.amazon.fr/gp/product/B071P98VTG/)
+[About Hardware](../doc/About-Hardware.md)
 
 ### Software
-### If you use PlatformIO
-Open this project in PlatformIO
+This program is edited using PlatformIO.
 
-### If you use Arduino IDE
-- Copy/Paste content of file [main.cpp](src/main.cpp) to your ino file (You can remove the following line ``#include <Arduino.h>``)
-- Copy other files in folder `src` to the same folder as ino file
-- Install libraries listed in [Build With](#built-with) section
+#### If you use Arduino IDE
+- Import code in Arduino IDE
 - Enable the `Path variable` support for ESPAsyncWebServer
 
-#### How to enable the `Path variable` support for ESPAsyncWebServer ?
-(Instructions copied from [https://github.com/me-no-dev/ESPAsyncWebServer#path-variable](https://github.com/me-no-dev/ESPAsyncWebServer#path-variable))
-
-You have to create/update `platform.local.txt`:
-
-`Windows`: %AppData%\Local\Arduino15\packages\\`{espxxxx}`\hardware\\`espxxxx`\\`{version}`\platform.local.txt
-
-`Linux`: ~/.arduino15/packages/`{espxxxx}`/hardware/`{espxxxx}`/`{version}`/platform.local.txt
-
-Add/Update the following line:
-```
-  compiler.cpp.extra_flags=-DDASYNCWEBSERVER_REGEX
-```
+The procedure is detailed in [Using Arduino IDE](../doc/Using-ArduinoIDE.md).
 
 ### Configuration
 Before uploading program to your ESP32, you must configure settings (IP Address, ...).
@@ -118,11 +97,6 @@ IPAddress ip(192, 168, 0, 11);
 | Enable output 0                | ``http://192.168.0.11/output/0/on``   |
 | Disable output 0               | ``http://192.168.0.11/output/0/off``     |
 | Enable output 0 during 2000 ms | ``http://192.168.0.11/output/0/on/2000`` |
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [ ] Use of 32 I/O (using 2 x MCP23017)
 
 <!-- LICENSE -->
 ## License

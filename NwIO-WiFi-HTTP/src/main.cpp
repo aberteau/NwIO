@@ -22,6 +22,7 @@ AsyncWebServer webServer(80);
 WiFiClient client;
 
 Adafruit_MCP23X17 outputsMcp;
+Adafruit_MCP23X17 inputsMcp;
 
 const uint8_t inputCount = sizeof(inputConfigs) / sizeof(inputConfigs[0]);
 Input inputs[inputCount];
@@ -61,10 +62,14 @@ void handleInputStateChange(Input &input) {
 }
 
 void setupInputs() {
+  if (!inputsMcp.begin_I2C(0x26)) {
+    Serial.println("Error.");
+    while (1);
+  }
 
   for (uint8_t i = 0; i < inputCount; i++) {
     InputConfig config = inputConfigs[i];
-    inputs[i].init(i, config, handleInputStateChange);
+    inputs[i].init(inputsMcp, i, config, handleInputStateChange);
   }
 }
 

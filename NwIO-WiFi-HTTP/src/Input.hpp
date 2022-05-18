@@ -12,6 +12,7 @@
 #define INPUT_HPP
 
 #include <Arduino.h>
+#include <Adafruit_MCP23X17.h>
 
 struct InputConfig
 {
@@ -22,12 +23,13 @@ struct InputConfig
 
 class Input {
 public:
-  void init(uint8_t id, InputConfig config, void (*onStateChange)(Input &input));
+  void init(Adafruit_MCP23X17 &mcp, uint8_t id, InputConfig config, void (*onStateChange)(Input &input));
   uint8_t getId();
   bool getState();
   void loop();
 
 private:;
+  Adafruit_MCP23X17 *_mcp;
   uint8_t _id;
   InputConfig _config;
   bool _invertLogic;

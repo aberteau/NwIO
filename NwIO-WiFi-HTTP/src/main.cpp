@@ -23,7 +23,7 @@ WiFiClient client;
 const uint8_t inputCount = sizeof(inputConfigs) / sizeof(inputConfigs[0]);
 Input inputs[inputCount];
 
-InputStateHttpSender inputStateHttpSender(server.toString(), serverPort);
+InputStateHttpSender inputStateHttpSender(server.toString(), serverPort, deviceId);
 
 const uint8_t outputCount = sizeof(outputConfigs) / sizeof(outputConfigs[0]);
 Output outputs[outputCount];

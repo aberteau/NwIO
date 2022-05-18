@@ -22,6 +22,11 @@ All settings are defined in [Configuration.hpp](src/Configuration.hpp)
 |server| HTTP Server IP Address |
 |serverPort| HTTP Server Port       |
 
+### General
+| Variable   | Description                                                     |
+|------------|-----------------------------------------------------------------|
+| deviceId   | Device identifier |
+
 ## Inputs & Outputs
 By default, this program handles 8 inputs and 10 outputs (See [io-mappings](io-mappings.md)) but you can easily change pins usage by modifying ``inputConfigs`` and ``outputConfigs``.
 

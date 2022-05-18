@@ -25,6 +25,9 @@ IPAddress subnet(255, 255, 255, 0);
 IPAddress server(192, 168, 0, 39);
 int serverPort = 14999;
 
+// DeviceId
+String deviceId = "";
+
 // Inputs
 const unsigned long debounceDelay = 25;
 

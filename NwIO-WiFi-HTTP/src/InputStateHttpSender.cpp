@@ -11,12 +11,9 @@
 #include "InputStateHttpSender.hpp"
 #include <HTTPClient.h>
 
-InputStateHttpSender::InputStateHttpSender(String hostname, int port) {
+InputStateHttpSender::InputStateHttpSender(String hostname, int port, String deviceId) {
     _baseUrl = "http://" + hostname + ":" + port;
-}
-
-InputStateHttpSender::InputStateHttpSender(String hostname)
-  : InputStateHttpSender(hostname, 80) {
+    _deviceId = deviceId;
 }
 
 String InputStateHttpSender::getAbsolutePath(String path) {
@@ -34,8 +31,13 @@ String InputStateHttpSender::getUrl(String path) {
 }
 
 String InputStateHttpSender::getPath(uint8_t id, bool state) {
-  String path = "input/" + String(id) + "/" +  String(state);
-  return path;
+  String pathBegin = "input";
+  String idAndStateParameter = String(id) + "/" +  String(state);
+  if (_deviceId != "") {
+    return pathBegin + "/" + _deviceId + "/"+ idAndStateParameter;
+  }
+  
+  return pathBegin +  "/" + idAndStateParameter;
 }
 
 String InputStateHttpSender::getUrl(uint8_t id, bool state) {

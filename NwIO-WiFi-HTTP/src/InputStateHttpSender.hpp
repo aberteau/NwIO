@@ -15,12 +15,12 @@
 
 class InputStateHttpSender {
 public:
-  InputStateHttpSender(String hostname, int port);
-  InputStateHttpSender(String hostname);
+  InputStateHttpSender(String hostname, int port, String deviceId);
   void send(uint8_t id, bool state);
 
 private:
   String _baseUrl;
+  String _deviceId;
   String getAbsolutePath(String path);
   String getUrl(String path);
   String getPath(uint8_t id, bool state);

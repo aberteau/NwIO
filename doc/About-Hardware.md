@@ -17,7 +17,7 @@ Some programs in this project use Waveshare MCP23017 IO Expansion Board.
 ![Waveshare MCP23017](Waveshare-MCP23017.png)
 
 For more information :
-- [Waveshare MCP23017 IO Expansion Board](www.waveshare.com/wiki/MCP23017_IO_Expansion_Board)
+- [Waveshare MCP23017 IO Expansion Board](https://www.waveshare.com/wiki/MCP23017_IO_Expansion_Board)
 - [Amazon.fr](https://www.amazon.fr/Waveshare-MCP23017-IO-Expansion-Board/dp/B07P2H1NZG)
 
 ### Connection

@@ -8,14 +8,14 @@ This repository contains programs that allow digital I/O interactions through IP
 
 <!-- PROJECTS -->
 ## Projects
-| Project                                                  | Number of IO | Network | Communication |
-|----------------------------------------------------------|--------------|-------------------|---------------|
-| [NwIO-WiFi-HTTP](NwIO-WiFi-HTTP) | 18           | WiFi              | HTTP          |
+| Project                              | Number of IO                                                     | Network | Communication |
+|--------------------------------------|------------------------------------------------------------------|-------------------|---------------|
+| [NwIO-WiFi-HTTP](NwIO-WiFi-HTTP)     | 18                                                               | WiFi              | HTTP          |
+| [NwIO-WiFi-HTTP-IxO](NwIO-WiFi-HTTP-IxO) | 32 (16 inputs using ESP32 + 16 outputs using Waveshare MCP23017) | WiFi              | HTTP          |
 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Use of 32 I/O (using 2 x MCP23017)
 - [ ] Adding MQTT communication
 
 <!-- LICENSE -->

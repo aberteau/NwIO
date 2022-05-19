@@ -1,10 +1,11 @@
 #include "Input.hpp"
 #include <Arduino.h>
 
-void Input::init(uint8_t id, InputConfig config, void (*onStateChange)(Input &input)) {
+void Input::init(Adafruit_MCP23X17 &mcp, uint8_t id, InputConfig config, void (*onStateChange)(Input &input)) {
+   _mcp = &mcp;
    _id = id;
    _config = config;
-   pinMode(_config.pin, INPUT_PULLUP);
+   _mcp->pinMode(_config.pin, INPUT_PULLUP);
    _onStateChange = onStateChange;
 
   bool state = readState();
@@ -20,7 +21,7 @@ bool Input::toBool(int state) {
 }
 
 bool Input::readState() {
-  int state = digitalRead(_config.pin);
+  int state = _mcp->digitalRead(_config.pin);
   bool bState = toBool(state);
   return bState;
 }

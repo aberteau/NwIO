@@ -39,21 +39,21 @@ const unsigned long debounceDelay = 25;
 */
 InputConfig inputConfigs[] =
 {
-  { 32, false, debounceDelay },
-  { 33, false, debounceDelay },
-  { 25, false, debounceDelay },
-  { 26, false, debounceDelay },
-  { 27, false, debounceDelay },
-  { 14, false, debounceDelay },
+  { 0, false, debounceDelay },
+  { 1, false, debounceDelay },
+  { 2, false, debounceDelay },
+  { 3, false, debounceDelay },
+  { 4, false, debounceDelay },
+  { 5, false, debounceDelay },
+  { 6, false, debounceDelay },
+  { 7, false, debounceDelay },
+  { 8, false, debounceDelay },
+  { 9, false, debounceDelay },
+  { 10, false, debounceDelay },
+  { 11, false, debounceDelay },
   { 12, false, debounceDelay },
   { 13, false, debounceDelay },
-  { 23, false, debounceDelay },
-  { 19, false, debounceDelay },
-  { 18, false, debounceDelay },
-  { 5, false, debounceDelay },
-  { 17, false, debounceDelay },
-  { 16, false, debounceDelay },
-  { 4, false, debounceDelay },
+  { 14, false, debounceDelay },
   { 15, false, debounceDelay }
 };
 

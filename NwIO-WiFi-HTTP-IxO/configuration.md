@@ -22,15 +22,26 @@ All settings are defined in [Configuration.hpp](src/Configuration.hpp)
 |server| HTTP Server IP Address |
 |serverPort| HTTP Server Port       |
 
-### General
+### Device
 | Variable   | Description                                                     |
 |------------|-----------------------------------------------------------------|
 | deviceId   | Device identifier |
 
 ## Inputs & Outputs
-This program handles :
-- 16 inputs (ESP32 GPIO)
-- 16 outputs (Waveshare MCP23017 GPIO)
+### Zero-based numbering
+| Variable             | Description                                              | Value                       |
+|----------------------|----------------------------------------------------------|-----------------------------|
+| ZeroBasedIoNumbering | Determines the identifier used for first Input/Output Id | `true` (default) or `false` |
 
+| ZeroBasedIoNumbering | First I/O id |
+|----------------------|--------------|
+| `true`               | 0            |
+| `false`              | 1            |
+
+(See [io-mappings](io-mappings.md))
+
+### Pin assignation
 You can change input pins assignation by modifying ``inputConfigs``
 (See [io-mappings](io-mappings.md))
+
+

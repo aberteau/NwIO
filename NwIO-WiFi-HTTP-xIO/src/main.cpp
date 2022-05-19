@@ -12,10 +12,10 @@
 #include <WiFi.h>
 #include <AsyncTCP.h>
 #include <ESPAsyncWebServer.h>
+#include <Adafruit_MCP23X17.h>
 #include "Output.hpp"
 #include "Input.hpp"
 #include "InputStateHttpSender.hpp"
-#include <Adafruit_MCP23X17.h>
 #include "Configuration.hpp"
 
 AsyncWebServer webServer(80);

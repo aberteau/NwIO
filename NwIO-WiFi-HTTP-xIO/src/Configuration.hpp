@@ -25,10 +25,12 @@ IPAddress subnet(255, 255, 255, 0);
 IPAddress server(192, 168, 0, 39);
 int serverPort = 14999;
 
-// DeviceId
+// Device
 String deviceId = "";
 
-// Inputs
+// Inputs & Outputs
+const bool ZeroBasedIoNumbering = true;
+
 const unsigned long debounceDelay = 25;
 
 /*
@@ -57,7 +59,6 @@ InputConfig inputConfigs[] =
   { 15, false, debounceDelay }
 };
 
-// Outputs
 /*
   Format : { <pin>, <invertLogic> }
     <pin> : GPIO Pin Number

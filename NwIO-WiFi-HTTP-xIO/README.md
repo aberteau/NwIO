@@ -4,22 +4,24 @@
 ## About The Project
 This program allows to use an ESP32 to control 32 Inputs/Outputs over HTTP using WiFi Connection.
 
-- 16 inputs (ESP32 GPIO)
+- 16 inputs (Waveshare MCP23017 GPIO)
 - 16 outputs (Waveshare MCP23017 GPIO)
 
 ### Features
 - send the state of an input to an HTTP server
 - set the state of an output by HTTP calls
 
-![Overview](NwIO-WiFi-HTTP-IxO%20Overview.png)
+![Overview](NwIO-WiFi-HTTP-xIO%20Overview.png)
 
 <!-- GETTING STARTED -->
 ## Getting Started
 ### Hardware
 - ESP32 NodeMCU
-- Waveshare MCP23017 IO Expansion Board (connected on ESP32 using I2C)
+- 2 x Waveshare MCP23017 IO Expansion Board (connected on ESP32 using I2C)
 
 [About Hardware](../doc/About-Hardware.md)
+
+You must weld A0 to change address of the board used for inputs.
 
 ### Software
 This program is edited using PlatformIO.

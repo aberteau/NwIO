@@ -29,8 +29,5 @@ All settings are defined in [Configuration.hpp](src/Configuration.hpp)
 
 ## Inputs & Outputs
 This program handles :
-- 16 inputs (ESP32 GPIO)
+- 16 inputs (Waveshare MCP23017 GPIO)
 - 16 outputs (Waveshare MCP23017 GPIO)
-
-You can change input pins assignation by modifying ``inputConfigs``
-(See [io-mappings](io-mappings.md))

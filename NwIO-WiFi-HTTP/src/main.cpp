@@ -15,6 +15,7 @@
 #include "Output.hpp"
 #include "Input.hpp"
 #include "InputStateHttpSender.hpp"
+#include "IoIdentifierMapper.hpp"
 #include "Configuration.hpp"
 
 AsyncWebServer webServer(80);
@@ -27,6 +28,8 @@ InputStateHttpSender inputStateHttpSender(server.toString(), serverPort, deviceI
 
 const uint8_t outputCount = sizeof(outputConfigs) / sizeof(outputConfigs[0]);
 Output outputs[outputCount];
+
+IoIdentifierMapper ioIdentifierMapper(ZeroBasedIoNumbering);
 
 void setupWiFi(){
   // init the WiFi connection
@@ -61,7 +64,8 @@ void setupInputs() {
 
   for (uint8_t i = 0; i < inputCount; i++) {
     InputConfig config = inputConfigs[i];
-    inputs[i].init(i, config, handleInputStateChange);
+    uint8_t id = ioIdentifierMapper.arrayIndexToId(i);
+    inputs[i].init(id, config, handleInputStateChange);
   }
 }
 
@@ -86,8 +90,9 @@ void handleOutputRequest(AsyncWebServerRequest *request) {
 
   String idArg = request->pathArg(0);
   long id = idArg.toInt();
+  int8_t i = ioIdentifierMapper.idToArrayIndex(id);
 
-  if (id >= outputCount) {
+  if ((i < 0) || (i > outputCount - 1)) {
     request->send(400, "text/plain", "input not defined");
     return;
   }
@@ -104,10 +109,10 @@ void handleOutputRequest(AsyncWebServerRequest *request) {
       return;
     }
 
-    outputs[id].on(duration);
+    outputs[i].on(duration);
   } else {
     bool state = getState(stateArg);
-    outputs[id].set(state);
+    outputs[i].set(state);
   }
 
   request->send(200);

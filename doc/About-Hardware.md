@@ -19,3 +19,13 @@ Some programs in this project use Waveshare MCP23017 IO Expansion Board.
 For more information :
 - [Waveshare MCP23017 IO Expansion Board](www.waveshare.com/wiki/MCP23017_IO_Expansion_Board)
 - [Amazon.fr](https://www.amazon.fr/Waveshare-MCP23017-IO-Expansion-Board/dp/B07P2H1NZG)
+
+### Connection
+| MCP23017 | ESP32      |
+|----------|------------|
+| INTB     | -          |
+| INTA     | -          |
+| SCL      | SCL (IO22) |
+| SDA      | SDA (IO21) |
+| GND      | GND        |
+| VCC      | 3.3V       |

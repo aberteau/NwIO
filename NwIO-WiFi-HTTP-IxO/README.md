@@ -11,7 +11,7 @@ This program allows to use an ESP32 to control 32 Inputs/Outputs over HTTP using
 - send the state of an input to an HTTP server
 - set the state of an output by HTTP calls
 
-![Overview](NwIO-WiFi-HTTP-IxO%20Overview.png)
+![Overview](Overview.png)
 
 <!-- GETTING STARTED -->
 ## Getting Started

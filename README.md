@@ -8,11 +8,40 @@ This repository contains programs that allow digital I/O interactions through IP
 
 <!-- PROJECTS -->
 ## Projects
-| Project                                  | Number of IO                                                     | Network | Communication |
-|------------------------------------------|------------------------------------------------------------------|-------------------|---------------|
-| [NwIO-WiFi-HTTP](NwIO-WiFi-HTTP)         | 18                                                               | WiFi              | HTTP          |
-| [NwIO-WiFi-HTTP-IxO](NwIO-WiFi-HTTP-IxO) | 32 (16 inputs using ESP32 + 16 outputs using Waveshare MCP23017) | WiFi              | HTTP          |
-| [NwIO-WiFi-HTTP-xIO](NwIO-WiFi-HTTP-xIO) | 32 (16 inputs + 16 outputs using Waveshare MCP23017) | WiFi              | HTTP          |
+| Project                                  | Number of IO | Network | Communication |
+|------------------------------------------|--------------|-------------------|---------------|
+| [NwIO-WiFi-HTTP](NwIO-WiFi-HTTP)         | 18           | WiFi              | HTTP          |
+| [NwIO-WiFi-HTTP-IxO](NwIO-WiFi-HTTP-IxO) | 32           | WiFi              | HTTP          |
+| [NwIO-WiFi-HTTP-xIO](NwIO-WiFi-HTTP-xIO) | 32           | WiFi              | HTTP          |
+
+### NwIO-WiFi-HTTP
+This program allows to use an ESP32 to control 18 Inputs/Outputs over HTTP using WiFi Connection.
+
+By default, it handles 8 inputs and 10 outputs but you can easily modify pins usage in configuration (For example, 2 inputs and 16 outputs).
+
+![NwIO-WiFi-HTTP Overview](NwIO-WiFi-HTTP/Overview.png)
+
+[More information](NwIO-WiFi-HTTP)
+
+### NwIO-WiFi-HTTP-IxO
+This program allows to use an ESP32 to control 32 Inputs/Outputs over HTTP using WiFi Connection.
+
+- 16 inputs (ESP32 GPIO)
+- 16 outputs (MCP23017 GPIO)
+
+![NwIO-WiFi-HTTP-IxO Overview](NwIO-WiFi-HTTP-IxO/Overview.png)
+
+[More information](NwIO-WiFi-HTTP-IxO)
+
+### NwIO-WiFi-HTTP-xIO
+This program allows to use an ESP32 to control 32 Inputs/Outputs over HTTP using WiFi Connection.
+
+- 16 inputs (MCP23017 GPIO)
+- 16 outputs (MCP23017 GPIO)
+
+![NwIO-WiFi-HTTP-xIO Overview](NwIO-WiFi-HTTP-xIO/Overview.png)
+
+[More information](NwIO-WiFi-HTTP-xIO)
 
 <!-- ROADMAP -->
 ## Roadmap

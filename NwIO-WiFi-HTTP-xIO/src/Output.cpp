@@ -1,7 +1,7 @@
 /**
- * NwIO-WiFi-HTTP-IxO (c) by Amael BERTEAU
+ * NwIO-WiFi-HTTP-xIO (c) by Amael BERTEAU
  * 
- * NwIO-WiFi-HTTP-IxO is licensed under a
+ * NwIO-WiFi-HTTP-xIO is licensed under a
  * Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
  * 
  * You should have received a copy of the license along with this

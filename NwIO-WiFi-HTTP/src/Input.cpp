@@ -9,7 +9,6 @@
  */
 
 #include "Input.hpp"
-#include <Arduino.h>
 
 void Input::init(uint8_t id, InputConfig config, void (*onStateChange)(Input &input)) {
    _id = id;

@@ -86,7 +86,7 @@ To set output state, call following URL ``http://{ip}/output/{id}/{state}/{durat
 |-----------|------------------------------------------------------------------|-----------------------------------|
 | id        | Output id                                                        | See [io-mappings](io-mappings.md) |
 | state     | Output state                                                     | off or on                         |
-| duration  | Duration (ms) Only available for "on" | 0 to 65535                        |
+| duration  | Duration (ms) Only available for "on" | 1 to 65535                        |
 
 #### Examples
 Given the following configuration :

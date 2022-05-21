@@ -27,7 +27,7 @@ public:
   bool getState();
   void loop();
 
-private:;
+private:
   uint8_t _id;
   InputConfig _config;
   bool _invertLogic;

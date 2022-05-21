@@ -28,7 +28,7 @@ public:
   bool getState();
   void loop();
 
-private:;
+private:
   Adafruit_MCP23X17 *_mcp;
   uint8_t _id;
   InputConfig _config;

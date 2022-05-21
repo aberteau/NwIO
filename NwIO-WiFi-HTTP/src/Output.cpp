@@ -11,9 +11,9 @@
 #include "Output.hpp"
 
 void Output::init(OutputConfig config) {
-   _config = config;
-   pinMode(_config.pin, OUTPUT);
-   set(false);
+  _config = config;
+  pinMode(_config.pin, OUTPUT);
+  internalSet(false);
 }
 
 uint8_t Output::getVal(bool state) {
@@ -27,26 +27,43 @@ void Output::internalSet(bool state) {
 }
 
 void Output::set(bool state) {
-  _onDuration = 0;
-  _startOnNextLoop = false;
-  internalSet(state);
+  _cmd = OutputCommand::setState;
+  _cmdState = state;
 }
 
-void Output::on(unsigned short duration) {
-  _onDuration = duration;
-  _startOnNextLoop = true;
+void Output::on(uint16_t duration) {
+  _cmd = OutputCommand::timer;
+  _cmdDuration = duration;
+}
+
+void Output::handleCommand() {
+
+  switch (_cmd)
+  {
+    case OutputCommand::none :
+      return;
+
+    case OutputCommand::setState :
+      _timer.stop();
+      internalSet(_cmdState);
+      break;
+  
+    case OutputCommand::timer :
+      internalSet(true);
+      _timer.start(_cmdDuration);
+      break;
+  }
+
+  _cmd = OutputCommand::none;
 }
 
 void Output::loop() {
-  if (_startOnNextLoop) {
-    internalSet(true);
-    _onStart = millis();
-    _startOnNextLoop = false;
-  }
-
-  if (!_startOnNextLoop && (_onDuration > 0)) {
-    if (millis() - _onStart >= _onDuration) {
-      set(false);
+  handleCommand();
+  
+  if (_timer.isStarted()) {
+    if (_timer.hasElapsed()) {
+      internalSet(false);
+      _timer.stop();
     }
   }
 }

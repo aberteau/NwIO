@@ -125,12 +125,25 @@ void handleOutputRequest(AsyncWebServerRequest *request) {
   request->send(200);
 }
 
+void handleOutputsRequest(AsyncWebServerRequest *request) {
+
+  String stateArg = request->pathArg(0);
+  bool state = getState(stateArg);
+
+  for (uint8_t i = 0; i < outputCount; i++) {
+    outputs[i].set(state);
+  }
+
+  request->send(200);
+}
+
 void handleNotFoundRequest(AsyncWebServerRequest *request) {
     request->send(404, "text/plain", "Not found");
 }
 
 void setupWebServer() {
   webServer.on("^\\/output\\/(\\d+)\\/(on|off)(?:\\/(\\d+))?$", HTTP_GET, handleOutputRequest);
+  webServer.on("^\\/outputs\\/(on|off)$", HTTP_GET, handleOutputsRequest);
 
   webServer.onNotFound(handleNotFoundRequest);
   

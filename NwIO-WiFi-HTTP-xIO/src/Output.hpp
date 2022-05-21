@@ -27,10 +27,9 @@ public:
   void on(unsigned short duration);
   void loop();
 
-private:;
+private:
   Adafruit_MCP23X17 *_mcp;
   OutputConfig _config;
-  bool _invertLogic;
   unsigned short _onDuration;
   unsigned long _onStart;
   bool _startOnNextLoop;

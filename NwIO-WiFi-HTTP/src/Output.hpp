@@ -26,9 +26,8 @@ public:
   void on(unsigned short duration);
   void loop();
 
-private:;
+private:
   OutputConfig _config;
-  bool _invertLogic;
   unsigned short _onDuration;
   unsigned long _onStart;
   bool _startOnNextLoop;

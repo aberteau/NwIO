@@ -9,7 +9,6 @@
  */
 
 #include "Output.hpp"
-#include <Arduino.h>
 
 void Output::init(OutputConfig config) {
    _config = config;

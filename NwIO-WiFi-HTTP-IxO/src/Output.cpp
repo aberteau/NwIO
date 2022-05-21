@@ -9,7 +9,6 @@
  */
 
 #include "Output.hpp"
-#include <Arduino.h>
 
 void Output::init(Adafruit_MCP23X17 &mcp, OutputConfig config) {
   _mcp = &mcp;

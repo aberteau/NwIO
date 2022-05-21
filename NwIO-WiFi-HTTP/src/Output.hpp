@@ -12,6 +12,7 @@
 #define OUTPUT_HPP
 
 #include <Arduino.h>
+#include "Timer.hpp"
 
 struct OutputConfig
 {
@@ -19,20 +20,28 @@ struct OutputConfig
   bool invertLogic;
 };
 
+enum class OutputCommand {
+  none,
+  setState,
+  timer
+};
+
 class Output {
 public:
   void init(OutputConfig config);
   void set(bool state);
-  void on(unsigned short duration);
+  void on(uint16_t duration);
   void loop();
 
 private:
   OutputConfig _config;
-  unsigned short _onDuration;
-  unsigned long _onStart;
-  bool _startOnNextLoop;
+  Timer _timer;
+  OutputCommand _cmd;
+  bool _cmdState;
+  uint16_t _cmdDuration;
   uint8_t getVal(bool state);
   void internalSet(bool state);
+  void handleCommand();
 };
 
 #endif

@@ -51,6 +51,8 @@ void setupWiFi(){
     Serial.print(".");
   }
 
+  WiFi.setSleep(false);
+
   Serial.println("");
   Serial.println("INFO: WiFi connected");
   Serial.println("INFO: IP address: ");

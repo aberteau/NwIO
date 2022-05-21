@@ -44,11 +44,11 @@ Each change of state triggers an HTTP request to following URL (depending value 
 | Empty String ("")  | `http://{server}:{serverPort}/input/{id}/{state}`            |
 | Non-empty String   | `http://{server}:{serverPort}/input/{deviceId}/{id}/{state}` |
 
-| Parameter | Description       | Values                                        |
-|-----------|-------------------|-----------------------------------------------|
-| deviceId  | Device identifier | Value of `deviceId` setted in Configuration.hpp |
-| id        | Input id          | See [io-mappings](io-mappings.md)             |
-| state     | Input state       | 0 or 1                                        |
+| Parameter | Description       | Values                                   |
+|-----------|-------------------|------------------------------------------|
+| deviceId  | Device identifier | Value of `deviceId` in Configuration.hpp |
+| id        | Input id          | See [io-mappings](io-mappings.md)        |
+| state     | Input state       | `0` or `1`                               |
 
 #### Examples
 ##### Example A
@@ -59,10 +59,10 @@ int serverPort = 1234;
 ...
 String deviceId = "";
 ```
-| When                 | HTTP request is sent on                         |
-|----------------------|---------------------------------------|
-| Input 0 changes to 0 | ``http://192.168.0.1:1234/input/0/0``   |
-| Input 0 changes to 1 | ``http://192.168.0.1:1234/input/0/1``    |
+| When                 | HTTP request is sent on             |
+|----------------------|-------------------------------------|
+| Input 0 changes to 0 | `http://192.168.0.1:1234/input/0/0` |
+| Input 0 changes to 1 | `http://192.168.0.1:1234/input/0/1` |
 
 ##### Example B
 Given the following configuration :
@@ -72,19 +72,19 @@ int serverPort = 1234;
 ...
 String deviceId = "deviceA";
 ```
-| When                 | HTTP request is sent on                       |
-|----------------------|-----------------------------------------------|
-| Input 0 changes to 0 | ``http://192.168.0.1:1234/input/deviceA/0/0`` |
-| Input 0 changes to 1 | ``http://192.168.0.1:1234/input/deviceA/0/1`` |
+| When                 | HTTP request is sent on                     |
+|----------------------|---------------------------------------------|
+| Input 0 changes to 0 | `http://192.168.0.1:1234/input/deviceA/0/0` |
+| Input 0 changes to 1 | `http://192.168.0.1:1234/input/deviceA/0/1` |
 
 ### Set output state with HTTP calls
 To set output state, call following URL ``http://{ip}/output/{id}/{state}/{duration}``
 
-| Parameter | Description                                                      | Values                            |
-|-----------|------------------------------------------------------------------|-----------------------------------|
-| id        | Output id                                                        | See [io-mappings](io-mappings.md) |
-| state     | Output state                                                     | off or on                         |
-| duration  | Duration (ms) Only available for "on" | 1 to 65535                        |
+| Parameter | Description                            | Values                            |
+|-----------|----------------------------------------|-----------------------------------|
+| id        | Output id                              | See [io-mappings](io-mappings.md) |
+| state     | Output state                           | `off` or `on`                     |
+| duration  | Duration (ms) Only available for "on"  | `1` to `65535`                    |
 
 #### Examples
 Given the following configuration :
@@ -92,11 +92,11 @@ Given the following configuration :
 IPAddress ip(192, 168, 0, 11);
 ```
 
-| Usage                          | URL to call                           |
-|--------------------------------|---------------------------------------|
-| Enable output 0                | ``http://192.168.0.11/output/0/on``   |
-| Disable output 0               | ``http://192.168.0.11/output/0/off``     |
-| Enable output 0 during 2000 ms | ``http://192.168.0.11/output/0/on/2000`` |
+| Usage                          | URL to call                            |
+|--------------------------------|----------------------------------------|
+| Enable output 0                | `http://192.168.0.11/output/0/on`      |
+| Disable output 0               | `http://192.168.0.11/output/0/off`     |
+| Enable output 0 during 2000 ms | `http://192.168.0.11/output/0/on/2000` |
 
 <!-- LICENSE -->
 ## License

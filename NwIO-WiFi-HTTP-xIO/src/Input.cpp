@@ -9,7 +9,6 @@
  */
 
 #include "Input.hpp"
-#include <Arduino.h>
 
 void Input::init(Adafruit_MCP23X17 &mcp, uint8_t id, InputConfig config, void (*onStateChange)(Input &input)) {
    _mcp = &mcp;

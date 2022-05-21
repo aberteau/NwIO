@@ -9,7 +9,6 @@
  */
 
 #include "IoIdentifierMapper.hpp"
-#include <Arduino.h>
 
 IoIdentifierMapper::IoIdentifierMapper(bool zeroBasedNumbering) {
   _zeroBasedNumbering = zeroBasedNumbering;

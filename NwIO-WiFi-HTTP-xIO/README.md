@@ -102,6 +102,24 @@ IPAddress ip(192, 168, 0, 11);
 | Disable output 0               | `http://192.168.0.11/output/0/off`     |
 | Enable output 0 during 2000 ms | `http://192.168.0.11/output/0/on/2000` |
 
+### Set all outputs state with HTTP calls
+To set all outputs state, call following URL `http://{ip}/outputs/{state}`
+
+| Parameter | Description    | Values        |
+|-----------|----------------|---------------|
+| state     | Output state   | `off` or `on` |
+
+#### Examples
+Given the following configuration :
+```
+IPAddress ip(192, 168, 0, 11);
+```
+
+| Usage                          | URL to call                          |
+|--------------------------------|--------------------------------------|
+| Enable all outputs             | `http://192.168.0.11/outputs/on`     |
+| Disable all outputs            | `http://192.168.0.11/outputs/off`    |
+
 <!-- LICENSE -->
 ## License
 This work is licensed under a

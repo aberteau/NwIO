@@ -30,7 +30,6 @@ public:
 private:
   Adafruit_MCP23X17 *_mcp;
   OutputConfig _config;
-  bool _invertLogic;
   unsigned short _onDuration;
   unsigned long _onStart;
   bool _startOnNextLoop;

@@ -43,6 +43,10 @@ This program allows to use an ESP32 to control 32 Inputs/Outputs over HTTP using
 
 [More information](NwIO-WiFi-HTTP-xIO)
 
+<!-- USAGE -->
+## Usage
+- [Interactions with Houdini MC](doc/Houdini-MC)
+
 <!-- ROADMAP -->
 ## Roadmap
 
